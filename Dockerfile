@@ -1,8 +1,8 @@
 FROM alpine:3.5
 LABEL maintainer "charanrajt@gmail.com"
 ENV OPENCV_VERSION 3.4.5
-ENV ENG-SCI /usr/local/eng-sci
-ENV OPENCV_INSTALL_DIR /usr/local/eng-sci/opencv
+ENV ENG_SCI /usr/local/eng_sci
+ENV OPENCV_INSTALL_DIR /usr/local/eng_sci/opencv
 
 
 
@@ -40,7 +40,7 @@ RUN cd /tmp \
 && tar -xzf opencv-$OPENCV_VERSION.tar.gz \
 && cd /tmp/opencv-$OPENCV_VERSION \
 && mkdir build \
-&& mkdir $ENG-SCI \
+&& mkdir $ENG_SCI \
 && mkdir $OPENCV_INSTALL_DIR \
 && cd build \
 && CC=/usr/bin/clang CXX=/usr/bin/clang++ cmake \
