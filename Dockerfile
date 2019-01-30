@@ -70,4 +70,4 @@ RUN cd /tmp \
 && cp lib/libopencv_mtcnn.a $OPENCV_INSTALL_DIR/lib64/ \
 && cp -r ../lib/include/mtcnn/ $OPENCV_INSTALL_DIR/include/ \ 
 && cd .. \
-&& rm -rf opencv-mtcnn/
+&& rm -r opencv-mtcnn
