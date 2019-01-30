@@ -38,6 +38,8 @@ linux-headers
 RUN cd /tmp \
 && wget -O opencv-$OPENCV_VERSION.tar.gz https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz \
 && tar -xzf opencv-$OPENCV_VERSION.tar.gz \
+&& wget -O opencv_contrib-$OPENCV_VERSION.tar.gz https://github.com/opencv/opencv_contrib/archive/$OPENCV_VERSION.tar.gz \
+&& tar -xzf opencv_contrib-$OPENCV_VERSION.tar.gz \
 && cd /tmp/opencv-$OPENCV_VERSION \
 && mkdir build \
 && mkdir $ENG_SCI \
@@ -53,6 +55,7 @@ RUN cd /tmp \
 -D WITH_1394=NO \
 -D BUILD_PERF_TESTS=OFF \
 -D BUILD_SHARED_LIBS=OFF \
+-D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-$OPENCV_VERSION/modules \
 -D BUILD_TESTS=OFF .. \
 && make -j2 \
 && make install \
