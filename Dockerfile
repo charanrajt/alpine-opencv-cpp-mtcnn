@@ -57,7 +57,7 @@ RUN cd /tmp \
 -D BUILD_SHARED_LIBS=OFF \
 -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-$OPENCV_VERSION/modules \
 -D BUILD_TESTS=OFF .. \
-&& make -j2 \
+&& make -j4 \
 && make install \
 && cd \
 && rm -rf /tmp/* \
