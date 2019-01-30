@@ -68,13 +68,6 @@ RUN cd /tmp \
 && cmake .. \
 && cmake --build . \
 && cp lib/libopencv_mtcnn.a $OPENCV_INSTALL_DIR/lib64/ \
-&& cp -r ../lib/include/mtcnn/ OPENCV_INSTALL_DIR/include/ \ 
+&& cp -r ../lib/include/mtcnn/ $OPENCV_INSTALL_DIR/include/ \ 
 && cd .. \
 && rm -rf opencv-mtcnn/
-
-
-
-
-
-
-
