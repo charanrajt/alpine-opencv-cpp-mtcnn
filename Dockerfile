@@ -32,6 +32,7 @@ tiff \
 tiff-dev \
 libjasper \
 jasper-dev \
+ffmpeg\
 linux-headers
 
 #3 Install Opencv with contrib modules
@@ -48,7 +49,7 @@ RUN cd /tmp \
 && CC=/usr/bin/clang CXX=/usr/bin/clang++ cmake \
 -D CMAKE_BUILD_TYPE=RELEASE \
 -D CMAKE_INSTALL_PREFIX=$OPENCV_INSTALL_DIR \
--D WITH_FFMPEG=NO \
+-D WITH_FFMPEG=YES\
 -D WITH_IPP=NO \
 -D WITH_OPENEXR=NO \
 -D WITH_TBB=YES \
