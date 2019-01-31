@@ -34,7 +34,7 @@ libjasper \
 jasper-dev \
 linux-headers
 
-
+#3 Install Opencv with contrib modules
 RUN cd /tmp \
 && wget -O opencv-$OPENCV_VERSION.tar.gz https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz \
 && tar -xzf opencv-$OPENCV_VERSION.tar.gz \
@@ -60,7 +60,10 @@ RUN cd /tmp \
 && make -j2 \
 && make install \
 && cd \
-&& rm -rf /tmp/* \
+&& rm -rf /tmp/* 
+
+#3 Install Opencv-MTCNN 
+RUN cd /tmp \
 && git clone https://github.com/charanrajt/opencv-mtcnn.git \
 && cd opencv-mtcnn \
 && mkdir build \
@@ -70,4 +73,5 @@ RUN cd /tmp \
 && cp lib/libopencv_mtcnn.a $OPENCV_INSTALL_DIR/lib64/ \
 && cp -r ../lib/include/mtcnn/ $OPENCV_INSTALL_DIR/include/ \ 
 && cd .. \
-&& rm -r opencv-mtcnn
+&& cd \
+&& rm -rf /tmp/* 
