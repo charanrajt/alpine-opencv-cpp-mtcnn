@@ -32,7 +32,7 @@ tiff \
 tiff-dev \
 libjasper \
 jasper-dev \
-ffmpeg\
+ffmpeg \
 linux-headers
 
 #3 Install Opencv with contrib modules
